@@ -1,0 +1,42 @@
+#header-section {
+ /* position: sticky;
+ top: 0; */
+ background-color: #fff;
+}
+
+#header-section #navBarSearchForm input[type="search"] {
+  width: 300px !important;
+  
+}
+
+#header-section a {
+  color: black;
+  font-size: 19px;
+  font-weight: 900;
+}
+
+#header-section a:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+#header-section img {
+  width: 121px;
+  height: 39px;
+}
+
+#header-section #navBarSearchForm {
+  /* padding-left: 23%;
+  padding-right: 23%; */
+  padding-left: 56%;
+}
+
+#navbarTogglerDemo03 {
+   
+  padding-left: 5%;
+ 
+}
+
+.header-input{
+  
+}

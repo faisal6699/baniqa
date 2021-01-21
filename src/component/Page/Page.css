@@ -1,0 +1,21 @@
+#page-section .profile-items .section-items .img {
+  width: 338px;
+  height: 228px;
+  /* box-shadow: 10px 10px 8px #cccccc; */
+  transition: 1s;
+}
+
+#page-section .profile-items .section-items .img:hover {
+  border: 1px solid deeppink;
+  border-radius: 2%;
+  /* box-shadow: 10px 10px 8px pink; */
+  transform: scale(1.1);
+}
+.checked {
+  color: yellow;
+  cursor: pointer;
+}
+
+.final {
+  margin-right: 10px;
+}

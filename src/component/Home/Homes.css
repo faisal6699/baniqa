@@ -1,0 +1,68 @@
+.title {
+  padding: 15px;
+}
+
+.title h2 {
+  font-family: "Quicksand", sans-serif;
+  text-transform: capitalize;
+  font-weight: 800;
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+
+#homes-section .recom-section .section-items .img {
+  margin-top: 15px;
+  width: 247px;
+  height: 143px;
+  /* box-shadow: 10px 10px 8px #cccccc; */
+  transition: 1s;
+}
+#homes-section .recom-section .section-items .img:hover {
+  border: 1px solid deeppink;
+  border-radius: 2%;
+  /* box-shadow: 10px 10px 8px pink; */
+  transform: scale(1.1);
+}
+
+#homes-section .fav_weekly_items .section-items .img {
+  margin-top: 15px;
+  width: 247px;
+  height: 143px;
+  /* box-shadow: 10px 10px 8px #cccccc; */
+  transition: 1s;
+}
+#homes-section .fav_weekly_items .section-items .img:hover {
+  border: 1px solid deeppink;
+  border-radius: 2%;
+  /* box-shadow: 10px 10px 8px pink; */
+  transform: scale(1.1);
+}
+
+#homes-section .popular-items .section-items .img {
+  margin-top: 15px;
+  width: 247px;
+  height: 143px;
+  /* box-shadow: 10px 10px 8px #cccccc; */
+  transition: 1s;
+}
+#homes-section .popular-items .section-items .img:hover {
+  border: 1px solid deeppink;
+  border-radius: 2%;
+  /* box-shadow: 10px 10px 8px pink; */
+  transform: scale(1.1);
+}
+
+#homes-section .new-seller .section-items .img {
+  margin-top: 15px;
+  width: 247px;
+  height: 143px;
+  /* box-shadow: 10px 10px 8px #cccccc; */
+  transition: 1s;
+}
+#homes-section .new-seller .section-items .img:hover {
+  border: 1px solid deeppink;
+  border-radius: 2%;
+  /* box-shadow: 10px 10px 8px pink; */
+  transform: scale(1.1);
+}

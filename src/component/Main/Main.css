@@ -1,0 +1,31 @@
+#carousel-section .carousel-control-next-icon {
+    background-image: url('../../assets/images/arrow-next.png')!important;
+    
+}
+
+#carousel-section .carousel-control-prev-icon {
+    background-image: url('../../assets/images/arrow-prev.png')!important;
+}
+
+#carousel-section .carousel-control-next-icon, .carousel-control-prev-icon {
+    display: inline-block;
+    width: 57px;
+    height: 31px;
+    background: no-repeat 50%/100% 100%;
+}
+
+#carousel-section .meet-sellers-section .img-group {
+    margin: 0 auto;
+}
+
+.currency {
+    font-size: 15px;
+}
+
+.carousel-indicators li {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+   background-color: rgb(23, 23, 65);
+}
+

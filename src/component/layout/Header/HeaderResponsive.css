@@ -1,0 +1,44 @@
+@media (max-width: 306px) {
+    #navBarSearchForm input[type=search] {
+        width: 219px !important;
+    }
+}
+
+@media (min-width: 307px) and (max-width: 339px) {
+    #navBarSearchForm input[type=search] {
+        width: 253px !important;
+    }
+}
+
+@media (min-width: 340px) and (max-width: 417px) {
+    #navBarSearchForm input[type=search] {
+        width: 331px !important;
+        margin-right: 10%!important;
+    }
+}
+
+@media (min-width: 418px) and (max-width: 991px) {
+    #navBarSearchForm input[type=search] {
+        width: 300px !important;
+        margin-right: 31%!important;
+    }
+    
+    .bm-burger-button {
+        top: 19px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #header-section #navBarSearchForm input[type=search] {
+        width: 265px!important;
+        margin-top: -57px!important;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {}
+
+@media (min-width: 768px) and (max-width: 991.98px) {}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+@media (min-width: 1200px) {}
