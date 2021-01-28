@@ -1,3 +1,9 @@
+#footer-section{
+  bottom: 0;
+  right: 0;
+  left: 0;
+  
+}
 footer.login-footer {
   border-top: 1px solid #272727;
   padding: 10px 0;

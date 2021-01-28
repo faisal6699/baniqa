@@ -1,6 +1,9 @@
 /* ============== */
 /* search bar */
 /* ============== */
+#add-product-section{
+  min-height: 650px;
+}
 section.search {
   z-index: -1;
 }
@@ -181,4 +184,15 @@ img {
 }
 .close-btn:hover, .save-btn:hover{
   color: gray;
+}
+
+#exampleModalCenter{
+  width: 100%;
+  height: 100%;
+}
+
+.popup-modal .form-control{
+  border : 0;
+  border-radius: 0;
+  border-bottom: 1px solid gray;
 }

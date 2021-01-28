@@ -11,10 +11,12 @@ import img13_1 from "../../assets/images/page_img/13.png";
 import img14 from "../../assets/images/page_img/14.jpg";
 import img15 from "../../assets/images/page_img/15.jpg";
 import imgk13 from "../../assets/images/page_img/k13.jpg";
+import send from "../../assets/images/send.png";
+import close from "../../assets/images/close.png";
 import "./Page.css";
 import { chatDetails } from "../../assets/js/dummyData";
 
-const Page = ({}) => {
+const Page = () => {
   const [chat, openChat] = useState(false);
   const messageEl = useRef(null);
 
@@ -22,16 +24,19 @@ const Page = ({}) => {
   //   return item.Id === messageId;
   // });
 
-  // useEffect(() => {
-  //   if (messageEl) {
-  //     messageEl.current.addEventListener('DOMNodeInserted', event => {
-  //       const { currentTarget: target } = event;
-  //       target.scroll({ top: target.scrollHeight, behavior: 'smooth' });
-  //     });
-  //   }
-  // }, [])
+  useEffect(() => {
+    if (chat) {
+      if (messageEl) {
+        console.log(messageEl)
+        messageEl.current.addEventListener("DOMNodeInserted", (event) => {
+          const { currentTarget: target } = event;
+          target.scroll({ top: target.scrollHeight, behavior: "smooth" });
+        });
+      }
+    }
+  }, []);
   return (
-    <section id="page-section">
+    <section className="page-section">
       {/* <div className="go_top">
             <i className="fa fa-angle-double-up" aria-hidden="true"></i>
           </div> */}
@@ -78,15 +83,9 @@ const Page = ({}) => {
                 </a>
 
                 {chat ? (
-                  <section
-                    className="list-main"
-                    style={{ position: "absolute", overflow: "auto", right: '0', zIndex: 1000}}
-                  >
-                    <nav className="navbar navbar-expand-lg navbar-light ">
-                      <div
-                        className="navbar-brand "
-                        style={{ display: "flex" }}
-                      >
+                  <section className="list-mains">
+                    <nav className="navbar" >
+                      <div className="navbar-brand" style={{ display: "flex" }}>
                         <img
                           src={chatDetails[0].img}
                           alt="user"
@@ -95,8 +94,20 @@ const Page = ({}) => {
                         />
                         <h2>{chatDetails[0].sender}</h2>
                       </div>
+
+                      <div onClick={() => openChat(false)}>
+                        <img
+                          src={close}
+                          style={{
+                            width: "20px",
+                            height: "20px",
+                            float: "right",
+                            cursor: "pointer",
+                          }}
+                        />
+                      </div>
                     </nav>
-                    <div className="conversation nav-sticky2" ref={messageEl}>
+                    <div className="conversations" ref={messageEl} >
                       {chatDetails[0].messages.map((item, index) => {
                         if (index % 2 === 0)
                           return (
@@ -130,6 +141,18 @@ const Page = ({}) => {
                             </div>
                           );
                       })}
+                    </div>
+
+                    <div className="row input-page-main" >
+                      <input
+                        type="text"
+                        placeholder="enter your message.."
+                        className="input-text-page col-md-10"
+                      />
+                      <button className="page-chat-button col-md-2">
+                        {/* <img src={send} style={{ width: '100%', height: ''}} /> */}
+                        <i className="fa fa-paper-plane" aria-hidden="true" style={{color: 'black', fontSize: '35px'}}></i>
+                      </button>
                     </div>
 
                     {/* {msg[0].messages.map((item,index) => {

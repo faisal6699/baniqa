@@ -1,30 +1,13 @@
 import React from "react";
 import Cart from "../../../Cart/Cart";
 import { slide as Menu } from "react-burger-menu";
-import './SideBar.css';
+import { CardConsumer } from "../../../../context/context";
+import "./SideBar.css";
 
-const SideBar = (props) => {
-  console.log(props);
-
-  const productCount = props.productCount;
-  const productSrcImg = props.productSrcImg;
-  const productTitle = props.productTitle;
-  const productPrice = props.productPrice;
-  const clickHandleCart = props.clickHandleCart;
-  const addToCartHandler = props.addToCartHandler;
-  const handleProductCount = props.handleProductCount;
-
+const SideBar = ({props}) => {
   return (
     <Menu {...props} left>
-      <Cart
-        productCount={productCount}
-        productSrcImg={productSrcImg}
-        productTitle={productTitle}
-        productPrice={productPrice}
-        clickHandleCart={clickHandleCart}
-        addToCartHandler={addToCartHandler}
-        handleProductCount={handleProductCount}
-      />
+      <Cart />
     </Menu>
     // <Menu {...props} left>
     //   <a className="menu-item" href="/">

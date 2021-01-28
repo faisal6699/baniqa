@@ -1,24 +1,32 @@
 .input-main {
-    position: fixed;
-    bottom: 80px;
-    width: 50%;
-    
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  
 }
 
-.input-text {
-  width: 80%;
-  font-size: 25px;
+/* .input-main .input-text {
+  overflow: auto;
+  
+  font-size: 20px;
   padding: 5px;
   border-radius: 5px;
 }
 
-.input-button {
+.input-main .input-button {
   width: 15%;
   border-radius: 5px;
-  font-size: 25px;
+  font-size: 20px;
   padding: 5px;
+  float: right;
+  
 }
 
-.input-button:hover{
-    background-color: blue;
-}
+.input-main .input-button:hover {
+  background-color: blue;
+} */
+
+/* #button {
+  font-size: 20px;
+  border: black;
+} */

@@ -53,29 +53,28 @@
 
 #post-section .product .product-desc h2 {
   text-transform: uppercase;
-  font-size: 25px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 #post-section .product .product-desc p {
-  font-size: 15px;
+  font-size: 12px;
   text-transform: capitalize;
-  /* margin: 20px 0; */
+  margin: 10px 0;
 }
 
 #post-section .product .product-desc span {
-  font-size: 30px;
-  font-weight: 700;
-  /* margin: 25px 0; */
+  font-size: 15px;
+  font-weight: 500;
+  margin: 10px 0;
   display: block;
-  padding: 2px;
 }
 
 #post-section .product .product-desc a {
   margin-top: 10px;
   text-transform: capitalize;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 #post-section .product .product-desc .btn {
@@ -87,7 +86,7 @@
 }
 
 #post-section .product .product-desc .msg {
-  font-size: 18px;
+  font-size: 12px;
   color: #212529;
   margin-top: 20px;
   display: block;
@@ -107,7 +106,7 @@
   text-transform: capitalize;
   font-weight: 800;
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   letter-spacing: 2px;
 }
 
@@ -127,7 +126,7 @@
 #post-section .simi-product .section-items .img {
   width: 338px;
   height: 228px;
-  /* box-shadow: 10px 10px 8px #cccccc; */
+  box-shadow: 10px 10px 8px #cccccc;
   position: relative;
   transition: 1s;
 }
@@ -135,7 +134,7 @@
 #post-section .simi-product .section-items .img:hover {
   border: 1px solid deeppink;
   border-radius: 2%;
-  /* box-shadow: 10px 10px 8px pink; */
+  box-shadow: 10px 10px 8px pink;
   transform: scale(1.1);
 }
 
@@ -151,13 +150,34 @@
 }
 
 #post-section .image-gallery-slides {
-  /* box-shadow: 10px -10px 8px #cccccc; */
+  box-shadow: 10px -10px 8px #cccccc;
 }
 
-.checked {
-  color: yellow;
-  cursor: pointer;
+.button-default{
+    padding: 5px 5px 5px 5px;
+    color: #fff;
+    background-color: #1a1a1a;
+    border: 0;
+    font-size: 12px;
+    text-transform: uppercase;
 }
-.final {
-  margin-right: 10px;
+
+.button-default:hover{
+  background-color: black;
+}
+
+.button-default-colorless{
+  padding: 5px 5px 5px 5px;
+    color: #1a1a1a;
+    border: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: white;
+}
+
+.button-default-colorless:hover{
+  text-decoration: underline;
+}
+.button-default-colorless:focus{
+  border: 0px;
 }

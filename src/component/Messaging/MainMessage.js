@@ -37,9 +37,9 @@ class MainMessage extends Component {
 
   render() {
     return (
-      <section>
+      <section className='chat-main'>
         <Headers />
-
+      <section className='chat-main'>
         <div className="row">
           <div className="col-md-4">
             <ChatList checkMessage={this.messageCheck} />
@@ -48,10 +48,12 @@ class MainMessage extends Component {
             <MessageList
               messages={this.state.messages}
               messageId={this.state.messageId}
+              
             />
             <SendMessageForm updateMessage={this.messageUpdate} />
           </div>
         </div>
+        </section>
         <Footers />
       </section>
     );

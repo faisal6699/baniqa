@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Post from "../../Post/Post";
 import logo1 from "../../../assets/images/logo1.png";
@@ -6,9 +6,12 @@ import profilesLogo from "../../../assets/images/profiles-logo.jpg";
 import "./Headers.css";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import email from '../../../assets/images/email.png'
-import cart from '../../../assets/images/cart.png'
+import email from "../../../assets/images/email.png";
+import cart from "../../../assets/images/cart.png";
+
 import $ from "jquery";
+import SideBar from "./SideBar/SideBar";
+import { CartContext } from "../../../context/cartContext";
 
 const Headers = (props) => {
   $(document).ready(function () {
@@ -25,6 +28,10 @@ const Headers = (props) => {
     });
   });
 
+  const { itemCount } = useContext(CartContext);
+  const manageClick = () => {
+    return <SideBar pageWrapId={"page-wrap"} />;
+  };
   return (
     <section id="headers-section">
       <header>
@@ -72,17 +79,21 @@ const Headers = (props) => {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            style={{float: "right"}}
+            style={{ float: "right" }}
           >
-            <span className="navbar-toggler-icon" >
-            
-            </span>
+            <span className="navbar-toggler-icon"></span>
           </button>
 
-          <Link to="/homes" className='navbar-brand'>
-            <img src={logo1} alt="logo" width="30" height="30" className='brand-image' />
+          <Link to="/homes" className="navbar-brand">
+            <img
+              src={logo1}
+              alt="logo"
+              width="30"
+              height="30"
+              className="brand-image"
+            />
           </Link>
-          <div className="main" >
+          <div className="main">
             <div className="form-group has-search">
               <span className="fa fa-search  form-control-feedback"></span>
               <input
@@ -95,24 +106,31 @@ const Headers = (props) => {
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto mt-2 mt-lg-0 ">
-              <li className="nav-item mr-3">
+              <li className="nav-item mr-4">
                 <span>
-                  <Link to='/cart'>
-                   <img src={cart} style={{marginTop: '4px'}} />
+                  {/* <div onClick={ manageClick}>
+                    <img src={cart} style={{ marginTop: "4px" }} />
+                  </div> */}
+                  <Link to="cart">
+                    <i className="fa" style={{ fontSize: "24px" }}>
+                      &#xf07a;
+                    </i>
+                    <span className="badge badge-warning" id="lblCartCount">
+                      {itemCount}
+                    </span>
                   </Link>
-                  <p className="cart-icon-text"></p>
                 </span>
               </li>
 
-              <li className="nav-item mr-3">
+              <li className="nav-item mr-4">
                 <span>
-                  <Link to='/messages'>
-                    <img src={email} style={{marginTop: '4px'}}/>
+                  <Link to="/messages">
+                    <img src={email} style={{ marginTop: "10px" }} />
                   </Link>
                 </span>
               </li>
 
-              <li className="nav-item dropdown">
+              <li className="nav-item dropdown ">
                 <a
                   className="nav-link dropdown-toggle"
                   href="#"

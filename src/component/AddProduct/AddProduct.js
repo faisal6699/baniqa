@@ -16,6 +16,7 @@ const AddProduct = (props) => {
     width: '100'
   }
   return (
+    <>
     <section id="add-product-section">
       <Headers />
 
@@ -62,7 +63,7 @@ const AddProduct = (props) => {
 
               <a
                 data-toggle="modal"
-                data-target="#exampleModalCenter"
+                data-target=".bd-example-modal-lg"
                 style={{
                   display: "flex",
                   paddingTop: "10px",
@@ -100,14 +101,14 @@ const AddProduct = (props) => {
       </section> */}
 
       <div
-        className="modal fade"
+        className="modal fade bd-example-modal-lg"
         id="exampleModalCenter"
         tabindex="-1"
         role="dialog"
         aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true"
       >
-        <div className="modal-dialog modal-dialog-scrollable" role="document">
+        <div className="modal-dialog modal-dialog-scrollable modal-lg" role="document">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalCenterTitle">
@@ -122,7 +123,7 @@ const AddProduct = (props) => {
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div className="modal-body">
+            <div className="modal-body popup-modal">
               <form>
                 <div className="form-group">
                   <label for="recipient-name" className="col-form-label">
@@ -215,8 +216,12 @@ const AddProduct = (props) => {
         </div>
       </div>
 
-      <Footers />
+      
     </section>
+
+    <Footers />
+
+    </>
   );
 };
 

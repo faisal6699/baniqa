@@ -69,8 +69,9 @@
 }
 
 #headers-section .nav-item a img {
-  width: 41px;
-  height: 41px;
+  width: 25px;
+  height: 30px;
+  
 }
 
 #headers-section .fa {
