@@ -1,62 +1,103 @@
-import React from "react";
+import React, { useState } from "react";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import { IoArrowBack } from "react-icons/io5";
+import "./signup.css";
+import { BsChevronDown} from 'react-icons/bs'
+import $ from "jquery";
 
 const SignupformC = () => {
+  const [type, passType] = useState("password");
+  const [toggle, setToggle] = useState(false);
+
+  // eslint-disable-next-line no-unused-vars
+
+  function setPassType() {
+    setToggle(!toggle);
+  }
+
   return (
-    <div>
+    <div className="registration-main">
       <div className="row">
-        <div className="col-md-3">back</div>
+        <div className="col-md-3">
+          <div className="back-button">
+            <IoArrowBack size="2em" />
+            <h5>Back</h5>
+          </div>
+        </div>
         <div className="col-md-2"></div>
         <div className="col-md-7">
           <ProgressBar animated now={10} />
         </div>
       </div>
-      <h2>Get Ready</h2>
-      <p>Enter a few details to enter the Baniqa community</p>
-      <h3>Your details</h3>
+      <h2 className="registration-header">Get Ready</h2>
+      <p className="registration-header-p">
+        Enter a few details to enter the Baniqa community
+      </p>
+
+      <h3 className="registration-header">Your details</h3>
       <div className="row">
-        <div className="col-md-6">
-          <div id="floatContainer" class="float-container">
+        <div className="col-md-6 margin-up-down">
+          <div id="floatContainer" className="float-container">
             <label for="floatField">First Name</label>
             <input id="floatField" type="text" />
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 margin-up-down">
           <div id="floatContainer" class="float-container">
             <label for="floatField">Last Name</label>
             <input id="floatField" type="text" />
           </div>
         </div>
+      </div>
 
-        <div className="col-md-12">
-          <div id="floatContainer" class="float-container">
-            <label for="floatField">Email</label>
-            <input id="floatField" type="text" />
-          </div>
+      <div className="margin-up-down padding-div">
+        <div id="floatContainer" className="float-container-email">
+          <label for="floatField">Email</label>
+          <input id="floatField" type="text" />
         </div>
       </div>
 
-      <h3>Create your username and password</h3>
-      <div id="floatContainer" class="float-container">
-        <label for="floatField">username</label>
-        <input id="floatField" type="text" />
+      <h3 className="registration-header">Create your username and password</h3>
+      <div className="margin-up-down padding-div">
+        <div id="floatContainer" class="float-container">
+          <label for="floatField">username</label>
+          <input id="floatField" type="text" />
+        </div>
       </div>
 
-      <div id="floatContainer" class="float-container">
-        <label for="floatField">password</label>
-        <input id="floatField" type="text" />
+      <div className="margin-up-down padding-div">
+        <div id="floatContainer" class="float-container">
+          <label for="floatField-password">username</label>
+          {toggle ? (
+            <input id="floatField-password" type="password" />
+          ) : (
+            <input id="floatField-password" type="text" />
+          )}
+
+          <span
+            onClick={setPassType}
+            toggle="#floatField-password"
+            className="fa fa-fw fa-eye field-icon toggle-password"
+          ></span>
+        </div>
       </div>
 
       <h3>Your location</h3>
-      <div id="floatContainer" class="float-container">
+      <div id="floatContainer" className="float-container">
+        <div className=''>
         <label for="floatField">username</label>
-        <hr />
-        <select name="language">
-          <option value="en">English</option>
-          <option value="bng">Bangla</option>
-          <option value="frnch">France</option>
-          <option value="german">Germany</option>
-        </select>
+        <div className='dropdown-location' id='floatField'>
+          <span className=''>abcd</span>
+          <BsChevronDown />
+        </div>
+        <div className="">
+            <span className="" data-value="tesla">Tesla</span>
+            <span className="" data-value="volvo">Volvo</span>
+            <span className="" data-value="mercedes">Mercedes</span>
+        </div>
+        </div>
+        
+          
       </div>
 
       <div className="row">

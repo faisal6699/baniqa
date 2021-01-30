@@ -13,7 +13,6 @@ import AccountSetting from "./component/AccountSetting/AccountSetting";
 import Cart from "./component/Cart/Cart";
 import MainMessage from "./component/Messaging/MainMessage";
 import SignupCreateForm from './component/Signup/signupCreateForm'
-import SignupPhoneForm from './component/Signup/signupPhoneForm'
 import SideBar from './component/layout/Header/SideBar/SideBar'
 import "./App.css";
 
@@ -33,7 +32,7 @@ function App() {
             <Route exact path="/messages" component={MainMessage} />
             <Route exact path="/cart" component={Cart} />
             <Route exact path="/signup" component={SignupCreateForm} />
-            <Route exact path="/signupPhone" component={SignupPhoneForm} />
+            
             <Route exact path="/" component={Homes} />
             <Route exact path="/homes" component={Homes} />
             <Route exact path="/login" component={LogIn} />
