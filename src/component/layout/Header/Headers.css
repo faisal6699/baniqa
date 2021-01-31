@@ -96,4 +96,12 @@
   display: none;
 }
 
+.login-link{
+  float: right;
+    padding-left: 70rem;
+    font-size: 20px;
+    color:  #1a1a1a;
+    margin-top: 14px;
+}
+
 

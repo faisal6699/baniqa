@@ -2,14 +2,14 @@ import React from 'react';
 import Headers from '../layout/Header/Headers';
 import Footers from '../layout/Footer/Footers';
 import { Link, useHistory } from 'react-router-dom';
+import * as Auth from '../../helpers/auth'
 import './LogIn.css';
 
 const LogIn = (props) => {
-    let history = useHistory();
+    // let history = useHistory();
 
     const onSubmitHandler = (e) => {
-      console.log(e);
-      history.push("/homes");
+      Auth.adminCheck(true)
     }
 
     return (
@@ -29,7 +29,7 @@ const LogIn = (props) => {
               <a className="button log" href="#" onClick={(e) => onSubmitHandler(e)} >login</a>
               <a className="button fb" href="#"> facebook</a>
               <span className="line">or</span>
-              <a className="button sign" href="#">sing up</a>
+              <Link className="button sign" to='signup'>sign up</Link>
             </div>
           </section>
 

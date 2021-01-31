@@ -40,6 +40,7 @@ const CartContextProvider = ({ children }) => {
     dispatch({ type: "CHECKOUT" });
   };
 
+  
   const contextValues = {
     increase,
     decrease,
@@ -47,6 +48,7 @@ const CartContextProvider = ({ children }) => {
     remove_item,
     clearCart,
     handle_checkout,
+    
     ...state,
   };
 

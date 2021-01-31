@@ -2,17 +2,24 @@ import React, { useState } from "react";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { IoArrowBack } from "react-icons/io5";
 import "./signup.css";
-import { BsChevronDown} from 'react-icons/bs'
+import { BsChevronDown } from "react-icons/bs";
 import $ from "jquery";
+import * as Auth from '../../helpers/auth'
 
 const SignupformC = () => {
   const [type, passType] = useState("password");
   const [toggle, setToggle] = useState(false);
+  const [drop, setDrop] = useState("Location");
 
   // eslint-disable-next-line no-unused-vars
 
   function setPassType() {
     setToggle(!toggle);
+  }
+
+  function handleSignup(){
+    console.log('abc')
+    Auth.adminCheck(true)
   }
 
   return (
@@ -67,7 +74,7 @@ const SignupformC = () => {
 
       <div className="margin-up-down padding-div">
         <div id="floatContainer" class="float-container">
-          <label for="floatField-password">username</label>
+          <label for="floatField-password">password</label>
           {toggle ? (
             <input id="floatField-password" type="password" />
           ) : (
@@ -82,32 +89,55 @@ const SignupformC = () => {
         </div>
       </div>
 
-      <h3>Your location</h3>
-      <div id="floatContainer" className="float-container">
-        <div className=''>
-        <label for="floatField">username</label>
-        <div className='dropdown-location' id='floatField'>
-          <span className=''>abcd</span>
-          <BsChevronDown />
+      <h3 className="registration-header">Your location</h3>
+      <div className="margin-up-down padding-div">
+        <div id="floatContainer" className="float-container w-100">
+          <div className="btn-group w-100">
+            <label for="floatField">location</label>
+            <button
+              id="floatField"
+              type="button"
+              className="btn drop-field-btn  dropdown-toggle"
+              data-toggle="dropdown"
+              data-display="static"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span style={{ float: "left" }}>Location</span>
+              <span className="loc-icon" style={{ float: "right" }}>
+                <BsChevronDown />
+              </span>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">
+                Action
+              </a>
+              <a class="dropdown-item" href="#">
+                Another action
+              </a>
+              <a class="dropdown-item" href="#">
+                Something else here
+              </a>
+            </div>
+          </div>
         </div>
-        <div className="">
-            <span className="" data-value="tesla">Tesla</span>
-            <span className="" data-value="volvo">Volvo</span>
-            <span className="" data-value="mercedes">Mercedes</span>
-        </div>
-        </div>
-        
-          
       </div>
 
-      <div className="row">
-        <input type="checkbox" />
-        <p>
-          Get emails from Baniqa, including special promotions and selling tips.
-        </p>
+      <div className="margin-up-down padding-div">
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <div style={{ paddingRight: "10px" }}>
+            <input type="checkbox" />
+          </div>
+          <div>
+            Get emails from Baniqa, including special promotions and selling
+            tips.
+          </div>
+        </div>
+        <div className="row"></div>
       </div>
-
-      <input type="submit" value="Next" />
+      <div className="margin-up-down padding-div">
+        <input type="submit" value="Next" className="submit-button" onClick={handleSignup}/>
+      </div>
     </div>
   );
 };

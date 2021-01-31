@@ -12,6 +12,7 @@ import cart from "../../../assets/images/cart.png";
 import $ from "jquery";
 import SideBar from "./SideBar/SideBar";
 import { CartContext } from "../../../context/cartContext";
+import * as Auth from "../../../helpers/auth";
 
 const Headers = (props) => {
   $(document).ready(function () {
@@ -29,9 +30,9 @@ const Headers = (props) => {
   });
 
   const { itemCount } = useContext(CartContext);
-  const manageClick = () => {
-    return <SideBar pageWrapId={"page-wrap"} />;
-  };
+  // const manageClick = () => {
+  //   return <SideBar pageWrapId={"page-wrap"} />;
+  // };
   return (
     <section id="headers-section">
       <header>
@@ -103,81 +104,92 @@ const Headers = (props) => {
               />
             </div>
           </div>
-
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ml-auto mt-2 mt-lg-0 ">
-              <li className="nav-item mr-4">
-                <span>
-                  {/* <div onClick={ manageClick}>
+          {Auth.validAdmin() ? (
+            <div
+              className="collapse navbar-collapse"
+              id="navbarSupportedContent"
+            >
+              <ul className="navbar-nav ml-auto mt-2 mt-lg-0 ">
+                <li className="nav-item mr-4">
+                  <span>
+                    {/* <div onClick={ manageClick}>
                     <img src={cart} style={{ marginTop: "4px" }} />
                   </div> */}
-                  <Link to="cart">
-                    <i className="fa" style={{ fontSize: "24px" }}>
-                      &#xf07a;
-                    </i>
-                    <span className="badge badge-warning" id="lblCartCount">
-                      {itemCount}
-                    </span>
-                  </Link>
-                </span>
-              </li>
+                    <Link to="cart">
+                      <i className="fa" style={{ fontSize: "24px" }}>
+                        &#xf07a;
+                      </i>
+                      <span className="badge badge-warning" id="lblCartCount">
+                        {itemCount}
+                      </span>
+                    </Link>
+                  </span>
+                </li>
 
-              <li className="nav-item mr-4">
-                <span>
-                  <Link to="/messages">
-                    <img src={email} style={{ marginTop: "10px" }} />
-                  </Link>
-                </span>
-              </li>
+                <li className="nav-item mr-4">
+                  <span>
+                    <Link to="/messages">
+                      <img src={email} style={{ marginTop: "10px" }} />
+                    </Link>
+                  </span>
+                </li>
 
-              <li className="nav-item dropdown ">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <img
-                    src={profilesLogo}
-                    className="rounded-circle"
-                    alt="logo"
-                  />
-                </a>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <Link className="dropdown-item" to="/page">
-                    Rakibul
-                  </Link>
-                  <div className="dropdown-divider"></div>
-                  <Link className="dropdown-item" to="/page">
-                    My Profile
-                  </Link>
-                  <div className="dropdown-divider"></div>
-                  <Link className="dropdown-item" to="/add-product">
-                    Add Selling Product
-                  </Link>
-                  <div className="dropdown-divider"></div>
-                  <Link className="dropdown-item" to="order-history">
-                    Order History
-                  </Link>
-                  <div className="dropdown-divider"></div>
-                  <Link className="dropdown-item" to="payment-history">
-                    Payment History
-                  </Link>
-                  <div className="dropdown-divider"></div>
-                  <Link className="dropdown-item" to="account-setting">
-                    Account Settings
-                  </Link>
-                  <div className="dropdown-divider"></div>
-                  <Link className="dropdown-item" to="/">
-                    Logout
-                  </Link>
-                </div>
-              </li>
-            </ul>
-          </div>
+                <li className="nav-item dropdown ">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <img
+                      src={profilesLogo}
+                      className="rounded-circle"
+                      alt="logo"
+                    />
+                  </a>
+                  <div
+                    className="dropdown-menu"
+                    aria-labelledby="navbarDropdown"
+                  >
+                    <Link className="dropdown-item" to="/page">
+                      Rakibul
+                    </Link>
+                    <div className="dropdown-divider"></div>
+                    <Link className="dropdown-item" to="/page">
+                      My Profile
+                    </Link>
+                    <div className="dropdown-divider"></div>
+                    <Link className="dropdown-item" to="/add-product">
+                      Add Selling Product
+                    </Link>
+                    <div className="dropdown-divider"></div>
+                    <Link className="dropdown-item" to="order-history">
+                      Order History
+                    </Link>
+                    <div className="dropdown-divider"></div>
+                    <Link className="dropdown-item" to="payment-history">
+                      Payment History
+                    </Link>
+                    <div className="dropdown-divider"></div>
+                    <Link className="dropdown-item" to="account-setting">
+                      Account Settings
+                    </Link>
+                    <div className="dropdown-divider"></div>
+                    <Link className="dropdown-item" to="/">
+                      Logout
+                    </Link>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <Link to="/login" className="login-link">
+              login
+            </Link>
+          )}
         </nav>
       </header>
     </section>

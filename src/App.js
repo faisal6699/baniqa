@@ -13,8 +13,10 @@ import AccountSetting from "./component/AccountSetting/AccountSetting";
 import Cart from "./component/Cart/Cart";
 import MainMessage from "./component/Messaging/MainMessage";
 import SignupCreateForm from './component/Signup/signupCreateForm'
+import SignupPhoneForm from './component/Signup/signupPhoneForm'
 import SideBar from './component/layout/Header/SideBar/SideBar'
 import "./App.css";
+import BaseRouter from './routes/routes'
 
 import CartContextProvider from "./context/cartContext";
 function App() {
@@ -24,31 +26,36 @@ function App() {
   
 
   return (
-    
       <Router>
-        <div className="App">
-        <CartContextProvider>
-          <Switch>
-            <Route exact path="/messages" component={MainMessage} />
-            <Route exact path="/cart" component={Cart} />
-            <Route exact path="/signup" component={SignupCreateForm} />
-            
-            <Route exact path="/" component={Homes} />
-            <Route exact path="/homes" component={Homes} />
-            <Route exact path="/login" component={LogIn} />
-            <Route exact path="/add-product" component={AddProduct} />
-            <Route exact path="/page" component={Page} />
-            <Route exact path="/post">
-              <Post />
-            </Route>
-            <Route exact path="/order-history" component={OrderHistory} />
-            <Route exact path="/payment-history" component={PaymentHistory} />
-            <Route exact path="/account-setting" component={AccountSetting} />
-          </Switch>
-
-          </CartContextProvider>
-        </div>
+        <BaseRouter />
       </Router>
+
+
+      // <Router>
+      //   <div className="App">
+      //   <CartContextProvider>
+      //     <Switch>
+      //       <Route exact path="/messages" component={MainMessage} />
+      //       <Route exact path="/cart" component={Cart} />
+      //       <Route exact path="/signup" component={SignupCreateForm} />
+      //       <Route exact path='/signup2' component={SignupPhoneForm} />
+            
+      //       <Route exact path="/" component={Homes} />
+      //       <Route exact path="/homes" component={Homes} />
+      //       <Route exact path="/login" component={LogIn} />
+      //       <Route exact path="/add-product" component={AddProduct} />
+      //       <Route exact path="/page" component={Page} />
+      //       <Route exact path="/post">
+      //         <Post />
+      //       </Route>
+      //       <Route exact path="/order-history" component={OrderHistory} />
+      //       <Route exact path="/payment-history" component={PaymentHistory} />
+      //       <Route exact path="/account-setting" component={AccountSetting} />
+      //     </Switch>
+
+      //     </CartContextProvider>
+      //   </div>
+      // </Router>
     
   );
 }

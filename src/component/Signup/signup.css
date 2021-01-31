@@ -1,6 +1,6 @@
 .signup-img {
   width: 100%;
-  height: 630px;
+  height: 740px;
   background: url("../../assets/images/img/10.jpg");
 }
 
@@ -9,9 +9,10 @@
   padding: 0 8px;
   position: relative;
 }
-.float-container input {
+.float-container input  {
   border: none;
   font-size: 16px;
+  font-weight: 600;
   outline: 0;
   padding: 16px 0 10px;
 }
@@ -30,11 +31,49 @@ label {
   position: relative;
 }
 
+.float-container-email input{
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  outline: 0;
+  padding: 16px 0 10px;
+}
+
+
 .padding-div {
   padding-right: 15px !important;
   padding-left: 15px !important;
 }
 
+.float-container .drop-field-btn{
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 10px 0px 10px 0px !important;
+}
+
+.float-container .dropdown-toggle::after {
+  display: none;
+}
+
+.loc-icon{
+  
+ 
+}
+
+.float-container .dropdown-menu {
+  left: 0%;
+  top: 100%;
+  overflow: auto;
+  height: 100px;
+  width: 20px;
+  min-width: 33rem;
+}
+
+.float-container .drop-field-btn:focus{
+  outline: none !important;
+  border: none !important;
+  box-shadow: none;
+}
 
 .float-container-email input {
   border: none;
@@ -58,13 +97,13 @@ label {
   align-items: center;
 }
 
-.registration-main .registration-header {
-  padding: 18px;
+ .registration-header {
+  padding: 5px;
   font-weight: 600;
 }
 
-.registration-main .registration-header-p {
-  padding: 2px 15px;
+ .registration-header-p {
+  padding: 2px 10px;
 }
 
 .field-icon {
@@ -78,3 +117,26 @@ label {
 .float-container .fa {
   font-size: 25px;
 }
+
+.submit-button{
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  font-size: 15px;
+  color: white;
+  background:  #1a1a1a;
+}
+
+.submit-button:hover{
+  background: black;
+}
+
+.signup-div-p{
+  margin: auto;
+  text-align: center;
+}
+
+ .verification-input{
+   width: 100% !important;
+   margin: 20px;
+
+ }
