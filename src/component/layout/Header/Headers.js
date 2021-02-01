@@ -85,7 +85,7 @@ const Headers = (props) => {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <Link to="/homes" className="navbar-brand">
+          <Link to="/" className="navbar-brand">
             <img
               src={logo1}
               alt="logo"

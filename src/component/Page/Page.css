@@ -47,11 +47,28 @@
   height: 300px;
 }
 
-.input-text-page{
+.input-text-page {
   height: 70px;
 }
 
-.page-chat-button{
+.page-chat-button {
   height: 70px;
 }
 
+.profile .profile-info h2 {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.profile .profile-info p {
+  font-size: 12px;
+  text-transform: capitalize;
+  margin: 10px 0;
+}
+.profile .profile-info span {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 10px 0;
+  display: block;
+}

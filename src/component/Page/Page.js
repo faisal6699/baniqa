@@ -13,6 +13,7 @@ import img15 from "../../assets/images/page_img/15.jpg";
 import imgk13 from "../../assets/images/page_img/k13.jpg";
 import send from "../../assets/images/send.png";
 import close from "../../assets/images/close.png";
+import { MdAttachFile, MdSend } from "react-icons/md";
 import "./Page.css";
 import { chatDetails } from "../../assets/js/dummyData";
 
@@ -27,7 +28,7 @@ const Page = () => {
   useEffect(() => {
     if (chat) {
       if (messageEl) {
-        console.log(messageEl)
+        console.log(messageEl);
         messageEl.current.addEventListener("DOMNodeInserted", (event) => {
           const { currentTarget: target } = event;
           target.scroll({ top: target.scrollHeight, behavior: "smooth" });
@@ -75,16 +76,21 @@ const Page = () => {
                 </div>
                 <em>6-8 days delivery</em>
                 <span>Cash On Delivery and BKash Avaliable</span>
-                <a className="btn flw" href="#">
-                  <i className="fa fa-plus" aria-hidden="true"></i> Follow
-                </a>
-                <a className="btn msg" href="#" onClick={() => openChat(true)}>
-                  <i className="fa fa-plus" aria-hidden="true"></i> Message
-                </a>
+                <button
+                  className="button-default pr-2"
+                  href="#"
+                  onClick={() => openChat(true)}
+                >
+                  Message
+                </button>
+                <button className="button-default-colorless" href="#">
+                  Follow
+                </button>
+                
 
                 {chat ? (
                   <section className="list-mains">
-                    <nav className="navbar" >
+                    <nav className="navbar">
                       <div className="navbar-brand" style={{ display: "flex" }}>
                         <img
                           src={chatDetails[0].img}
@@ -107,7 +113,7 @@ const Page = () => {
                         />
                       </div>
                     </nav>
-                    <div className="conversations" ref={messageEl} >
+                    <div className="conversations" ref={messageEl}>
                       {chatDetails[0].messages.map((item, index) => {
                         if (index % 2 === 0)
                           return (
@@ -143,17 +149,43 @@ const Page = () => {
                       })}
                     </div>
 
-                    <div className="row input-page-main" >
+                    <div className="send-button">
+                      <textarea
+                        type="text"
+                        className="send-button-input"
+                        placeholder="Enter Message"
+                        // onChange={(e) => {
+                        //   setInput(e.target.value);
+                        // }}
+                      />
+                      <MdAttachFile
+                        id="button"
+                        size="3em"
+                        // onClick={imageAdd}
+                        style={{ marginTop: "25px" }}
+                      />{" "}
+                      <MdSend
+                        size="3em"
+                        color="blue"
+                        onClick={() => {
+                          // console.log(input);
+                          // updateMessage(input);
+                        }}
+                        style={{ marginTop: "25px" }}
+                      />
+                    </div>
+
+                    {/* <div className="row input-page-main" >
                       <input
                         type="text"
                         placeholder="enter your message.."
                         className="input-text-page col-md-10"
                       />
                       <button className="page-chat-button col-md-2">
-                        {/* <img src={send} style={{ width: '100%', height: ''}} /> */}
+                        
                         <i className="fa fa-paper-plane" aria-hidden="true" style={{color: 'black', fontSize: '35px'}}></i>
                       </button>
-                    </div>
+                    </div> */}
 
                     {/* {msg[0].messages.map((item,index) => {
         return{

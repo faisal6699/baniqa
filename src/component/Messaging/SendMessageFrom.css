@@ -1,7 +1,33 @@
 .input-main {
-  position: absolute;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
   width: 100%;
+  height: 100px;
+  
+}
+
+.send-button{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.send-button-input{
+  border: 0px;
+  font-size: 20px;
+  overflow: auto;
+  height: 100px;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.send-button-input:focus{
+  
+  
+  
   
 }
 

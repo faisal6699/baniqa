@@ -4,6 +4,7 @@ import Homes from "../component/Home/Homes";
 import LogIn from "../component/LogIn/LogIn";
 import SignupCreateForm from "../component/Signup/signupCreateForm";
 import SignupPhoneForm from "../component/Signup/signupPhoneForm";
+import SignUpMain from '../component/Signup/signupMain'
 import Page from "../component/Page/Page";
 import Post from "../component/Post/Post";
 import AdminProtected from "../routes/adminprotectedRoute";
@@ -16,7 +17,7 @@ const BaseRouter = () => {
       <Switch>
         <Route exact path="/" component={Homes} />
         <Route exact path="/login" component={LogIn} />
-        <Route exact path="/signup" component={SignupCreateForm} />
+        <Route exact path="/signup" component={SignUpMain} />
         <Route exact path="/signup2" component={SignupPhoneForm} />
         <Route exact path="/page" component={Page} />
         <Route exact path="/post" component={Post} />

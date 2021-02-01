@@ -5,5 +5,5 @@ export const adminCheck = (type) => {
 };
 
 export const validAdmin = () => {
-  return false
+  return true
 };

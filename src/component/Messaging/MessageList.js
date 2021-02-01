@@ -51,7 +51,7 @@ const MessageList = ({ messages, messageId }) => {
           if (index % 2 === 0)
             return (
               <div className="row  ">
-                <div className="col-md-9">
+                <div className="col-md-6">
                 <div style={{display: 'flex'}}>
                 <img
                     src={msg[0].img}
@@ -63,14 +63,14 @@ const MessageList = ({ messages, messageId }) => {
                 </div>
                 </div>
                   
-                <div className="col-md-3"></div>
+                <div className="col-md-6"></div>
               </div>
             );
           else
             return (
               <div className="row">
-                <div className="col-md-3"></div>
-                <div className="col-md-9">
+                <div className="col-md-6"></div>
+                <div className="col-md-6">
                   <p className="text1">{item}</p>
                 </div>
               </div>

@@ -6,26 +6,26 @@ import Signupcreate from "./Signupcreate";
 import "./signup.css";
 import SignupformP from "./SignupformP";
 
-const SignupPhoneForm = () => {
-  const [phone, setPhone] = useState(true);
-
-  function onChaneToPhonePage() {
-    setPhone(true);
-  }
+const SignupPhoneForm = ({phoneForm,phone}) => {
+  
   return (
     <section>
-      <div className="row" id="signup">
-        <div className="col-md-6 signup-img"></div>
-        {phone ? (
+      {phone  ? (
+        <div className="row" id="signup">
+          <div className="col-md-6 signup-img"></div>
+
           <div className="col-md-6 signup-div-p">
-            <SignupformP phoneForm={onChaneToPhonePage} />
+            <SignupformP phoneForm={phoneForm} />
           </div>
-        ) : (
-          <div className="col-md-6 signup-div-p">
-            <Signupphone phoneForm={onChaneToPhonePage} />
+        </div>
+      ) : (
+        <div className="row" id="signup">
+          <div className="col-md-6 signup-img"></div>
+          <div className="col-md-6 signup-div">
+            <Signupphone phoneForm={phoneForm} />
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </section>
   );
 };

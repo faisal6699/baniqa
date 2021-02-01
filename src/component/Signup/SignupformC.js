@@ -6,7 +6,7 @@ import { BsChevronDown } from "react-icons/bs";
 import $ from "jquery";
 import * as Auth from '../../helpers/auth'
 
-const SignupformC = () => {
+const SignupformC = ({formPage}) => {
   const [type, passType] = useState("password");
   const [toggle, setToggle] = useState(false);
   const [drop, setDrop] = useState("Location");
@@ -136,7 +136,7 @@ const SignupformC = () => {
         <div className="row"></div>
       </div>
       <div className="margin-up-down padding-div">
-        <input type="submit" value="Next" className="submit-button" onClick={handleSignup}/>
+        <input type="submit" value="Next" className="submit-button" onClick={() => formPage('completed')}/>
       </div>
     </div>
   );
